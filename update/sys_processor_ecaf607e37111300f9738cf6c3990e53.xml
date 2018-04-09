@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_processor">
+    <sys_processor action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <description>Before loading vs/editor/editor.main, define a global MonacoEnvironment that overwrites the default worker url location (used when creating WebWorkers). The problem here is that HTML5 does not allow cross-domain web workers, so we need to proxy the instantiation of a web worker through a same-domain script.</description>
+        <interactive>false</interactive>
+        <name>monaco-editor-worker-loader-proxy</name>
+        <parameters/>
+        <params_endpoint/>
+        <path>monaco_editor_worker_loader_proxy</path>
+        <path_endpoint>x_215742_sncmder_monaco_editor_worker_loader_proxy</path_endpoint>
+        <require_csrf>false</require_csrf>
+        <roles/>
+        <script><![CDATA[(function process(g_request, g_response, g_processor) {
+
+	var cdnUrl = "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.11.1";
+	var baseUrl = cdnUrl + "/min/";
+	var workerUrl = cdnUrl + "/min/vs/base/worker/workerMain.js";
+	
+	var js = 'self.MonacoEnvironment = { baseUrl: "' + baseUrl + '" };';
+	js += 'importScripts("' + workerUrl + '")';
+	
+	g_processor.writeOutput('text/javascript', js);
+
+})(g_request, g_response, g_processor);]]></script>
+        <sys_class_name>sys_processor</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-04-09 18:17:07</sys_created_on>
+        <sys_id>ecaf607e37111300f9738cf6c3990e53</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>monaco-editor-worker-loader-proxy</sys_name>
+        <sys_package display_value="sncmder" source="x_215742_sncmder">af8ba43637111300f9738cf6c3990e90</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="sncmder">af8ba43637111300f9738cf6c3990e90</sys_scope>
+        <sys_update_name>sys_processor_ecaf607e37111300f9738cf6c3990e53</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-09 18:29:58</sys_updated_on>
+        <type>script</type>
+    </sys_processor>
+</record_update>

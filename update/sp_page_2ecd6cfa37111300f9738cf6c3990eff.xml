@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <id>monaco_test</id>
+        <internal>false</internal>
+        <public>false</public>
+        <roles/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-04-09 18:07:07</sys_created_on>
+        <sys_id>2ecd6cfa37111300f9738cf6c3990eff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>monaco_test</sys_name>
+        <sys_package display_value="sncmder" source="x_215742_sncmder">af8ba43637111300f9738cf6c3990e90</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="sncmder">af8ba43637111300f9738cf6c3990e90</sys_scope>
+        <sys_update_name>sp_page_2ecd6cfa37111300f9738cf6c3990eff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-04-09 18:07:07</sys_updated_on>
+        <title>monaco-test</title>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=2ecd6cfa37111300f9738cf6c3990eff"/>
+</record_update>
